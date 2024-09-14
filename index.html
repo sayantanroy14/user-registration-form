@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            border: 1px solid #dadce0;
+            border-radius: 8px;
+            width: 360px;
+            padding: 40px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: #202124;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            text-align: left;
+            font-size: 14px;
+            color: #5f6368;
+            width: 100%;
+            margin-bottom: 6px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: #f8f9fa;
+            box-sizing: border-box;
+        }
+
+        input:focus, select:focus {
+            border-color: #1a73e8;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: -18px;
+            margin-bottom: 10px;
+            text-align: left;
+            width: 100%;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1669c1;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #5f6368;
+        }
+
+        .footer a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form id="registrationForm">
+            <label for="username">Username</label>
+            <input type="text" id="username" onblur="validateUsername()">
+            <span id="usernameError" class="error"></span>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" onblur="validateEmail()">
+            <span id="emailError" class="error"></span>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" onblur="validatePassword()">
+            <span id="passwordError" class="error"></span>
+
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" onblur="validateConfirmPassword()">
+            <span id="confirmPasswordError" class="error"></span>
+
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text" id="phoneNumber" onblur="validatePhoneNumber()">
+            <span id="phoneNumberError" class="error"></span>
+
+            <label for="address">Address</label>
+            <input type="text" id="address" onblur="validateAddress()">
+            <span id="addressError" class="error"></span>
+
+            <label for="birthdate">Birthdate</label>
+            <input type="date" id="birthdate" onblur="validateBirthdate()">
+            <span id="birthdateError" class="error"></span>
+
+            <label for="gender">Gender</label>
+            <select id="gender" onblur="validateGender()">
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <span id="genderError" class="error"></span>
+
+            <button type="button" onclick="validateForm()">Submit</button>
+        </form>
+
+        <div class="footer">
+            <p>Already have an account? <a href="#">Sign in</a></p>
+        </div>
+    </div>
+
+    <script src="formValidation.js"></script>
+</body>
+</html>
